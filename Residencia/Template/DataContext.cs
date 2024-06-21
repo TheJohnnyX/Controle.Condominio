@@ -18,7 +18,6 @@ namespace Exemplo
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Residencia>().HasKey(p => p.Id);
-            
 
             base.OnModelCreating(modelBuilder);
         }
