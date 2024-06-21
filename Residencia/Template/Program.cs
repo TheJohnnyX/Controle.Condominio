@@ -1,5 +1,6 @@
-using Exemplo;
 using Microsoft.EntityFrameworkCore;
+using Residencia;
+using Residencia.Servicos;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +15,7 @@ builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
 
-builder.Services.AddScoped<IServExemplo, ServExemplo>();
+builder.Services.AddScoped<IServResidencia, ServResidencia>();
 
 var app = builder.Build();
 

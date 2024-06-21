@@ -1,9 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Reflection.Emit;
-using Template.Servicos;
 
-namespace Exemplo
+namespace Residencia
 {
     public class DataContext : DbContext
     {

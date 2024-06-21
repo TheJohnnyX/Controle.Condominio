@@ -1,9 +1,7 @@
-﻿namespace Residencia
+﻿namespace Residencia.DTO
 {
-    public class Residencia
+    public class InserirResidenciaDTO
     {
-        public int Id { get; set; }
-
         public string Endereco { get; set; }
 
         public string NomeLocal { get; set; }
