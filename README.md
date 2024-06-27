@@ -6,7 +6,7 @@ Este documento descreve o sistema de controle de condomínios, sua finalidade, f
 
 **Propósito**
 
-O sistema visa auxiliar na gestão de condomínios, oferecendo funcionalidades para cadastro de unidades habitacionais, moradores, taxas condominiais e gerenciamento de inadimplência. O sistema também permite a geração de relatórios de cobrança.
+O sistema visa auxiliar na gestão de condomínios, oferecendo funcionalidades para cadastro de unidades habitacionais, moradores, taxas condominiais.
 
 **Usuários**
 
@@ -19,7 +19,7 @@ O sistema é composto por microsserviços modulares e independentes, cada um com
 
 * **Microsserviço de Residências:** Gerencia as unidades habitacionais do condomínio, incluindo cadastro, edição, exclusão e listagem.
 * **Microsserviço de Moradores:** Gerencia os moradores do condomínio, incluindo cadastro, edição, exclusão e listagem.
-* **Microsserviço de Taxas de Condomínio:** Gerencia as taxas condominiais, incluindo cadastro, edição, exclusão, listagem e cálculo de inadimplência.
+* **Microsserviço de Taxas de Condomínio:** Gerencia as taxas condominiais, incluindo cadastro, edição, exclusão.
 
 **Entidades**
 
@@ -27,7 +27,7 @@ As entidades básicas do sistema são:
 
 * **Residência:** Possui identificador único (ID), endereço e morador atual.
 * **Morador:** Possui identificador único (ID), nome e CPF.
-* **Taxa de Condomínio:** Possui identificador único (ID), valor, data de vencimento e residência associada.
+* **Taxa de Condomínio:** Possui identificador único (ID), valor, morador associado e residência associada.
 
 **Requisitos Funcionais**
 
@@ -55,18 +55,13 @@ As entidades básicas do sistema são:
 * **Listar Moradores:** Fornece uma lista completa de todos os moradores cadastrados, incluindo seus identificadores, nomes e CPFs.
 * **Listar Taxas de Condomínio:** Fornece uma lista completa de todas as taxas condominiais cadastradas, incluindo seus identificadores, valores, datas de vencimento e residências associadas.
 
-**Outras Funcionalidades**
-
-* **Troca de Morador:** Permite registrar a mudança de morador em uma residência, verificando previamente se todas as taxas condominiais do morador atual estão pagas e atualizando o cadastro da residência com o novo morador.
-* **Cálculo de Inadimplência:** Identifica os moradores que possuem taxas condominiais em atraso e os marca como inadimplentes no sistema.
-* **Pagamento de Cobranças (opcional):** Permite registrar o pagamento de taxas condominiais, desmarcando o morador como inadimplente (se aplicável).
-* **Relatório de Cobranças:** Gera um relatório detalhado com informações sobre os moradores, valores pagos e valores em atraso para cada taxa condominial.
-
 **Observações**
 
 * O sistema pode ser adaptado para atender às necessidades específicas de cada condomínio.
 * A funcionalidade de pagamento de cobranças é opcional e pode ser integrada a um sistema de pagamento externo.
 * O relatório de cobranças pode ser personalizado para incluir diferentes campos e filtros.
+
+* O protótipo não atingiu o objetivo final. Apenas foi possível construir os 3 microsserviços, sem realizar as transações, conforme solicitado.
 
 **Equipe**
 
