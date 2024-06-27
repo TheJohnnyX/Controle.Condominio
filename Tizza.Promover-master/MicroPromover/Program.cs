@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Promocao;
+using Tizza;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,10 +13,11 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
+builder.Services.AddMemoryCache();
 
-builder.Services.AddScoped<IServPromover, ServPromover>();
-builder.Services.AddScoped<IPizzaHelper, PizzaHelper>();
-builder.Services.AddScoped<IMovimentoFinanceiroHelper, MovimentoFinanceiroHelper>();
+builder.Services.AddScoped<IServCondominio, ServCondominio>();
+builder.Services.AddScoped<IMoradorHelper, MoradorHelper>();
+builder.Services.AddScoped<IResidenciaHelper, ResidenciaHelper>();
 
 var app = builder.Build();
 
@@ -32,8 +33,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-
-GeradorDeServicos.ServiceProvider = builder.Services.BuildServiceProvider();
-RabbitMqManager.Iniciar();
 
 app.Run();
